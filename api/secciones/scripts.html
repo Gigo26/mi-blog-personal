@@ -1,0 +1,14 @@
+<script>
+// Marca en el menú la sección que se está viendo
+const enlaces=[...document.querySelectorAll('.menu a')];
+const secs=enlaces.map(a=>document.querySelector(a.getAttribute('href')));
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){
+    enlaces.forEach(a=>a.classList.toggle('activo',a.getAttribute('href')==='#'+e.target.id));
+  }});
+},{rootMargin:'-40% 0px -55% 0px'});
+secs.forEach(s=>s&&obs.observe(s));
+// Aparición suave
+const vis=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visto');vis.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.aparece').forEach(el=>vis.observe(el));
+</script>
