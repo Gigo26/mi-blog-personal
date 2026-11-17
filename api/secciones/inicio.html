@@ -10,9 +10,14 @@
         <a class="boton claro" href="#proyectos">Mis proyectos</a>
       </div>
     </div>
-    <!-- Para poner tu foto: reemplaza las iniciales por <img src="..." alt="José" style="width:100%;height:100%;border-radius:50%;object-fit:cover"> -->
-    <div class="avatar">JN</div>
+
+    <!-- FOTO: guarda tu imagen en api/img/foto.jpg. Si no existe, se muestran las iniciales JN. -->
+    <div class="avatar">
+      <span>JN</span>
+      <img src="/img/foto.jpg" alt="José Núñez (Gigo)" onerror="this.remove()">
+    </div>
   </div>
+
   <div class="datos">
     <div class="dato aparece"><b>4</b><span>proyectos que cuentan</span></div>
     <div class="dato aparece"><b>3</b><span>destinos visitados</span></div>
